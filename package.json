@@ -1,0 +1,14 @@
+{
+  "name": "flowerwrap",
+  "version": "1.0.0",
+  "description": "Site vitrine FlowerWrap - Covering automobile haut de gamme",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx live-server .",
+    "build": "echo 'Aucun build requis - site statique.'"
+  },
+  "author": "Noa Bendiaf",
+  "license": "MIT",
+  "keywords": ["covering", "automobile", "vitrine", "netlify", "flowerwrap"],
+  "dependencies": {}
+}

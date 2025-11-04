@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FlowerWrap – Covering automobile premium</title>
+  
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Libs (CDN) -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <!-- Swiper (CSS + JS) -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  <section class="hero-section" id="hero">
+    <header class="site-header">
+      <div class="header-container">
+        <div class="brand">
+          <img src="img/logo.webp" alt="Logo FlowerWrap" class="brand__logo" />
+          <span class="brand__name">FLOWERWRAP</span>
+        </div>
+        <nav class="nav" id="primary-nav">
+          <a href="#hero">Accueil</a>
+          <a href="#services">Services</a>
+          <a href="#galerie">Galerie</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="hero-content">
+      <picture class="hero-bg">
+        <source srcset="img/mobile4.webp" media="(max-width: 768px)">
+        <source srcset="img/background2.webp" media="(max-width: 1200px)">
+        <img src="img/background2.webp" alt="Voiture bleue et mascotte FlowerWrap" class="hero-background">
+      </picture>
+
+      <h1 class="hero-title" id="hero-title">
+        Transformez votre<br />véhicule en œuvre d'art
+      </h1>
+
+      <a href="#contact" class="hero-button">
+        <span class="button-bg"></span>
+        <span class="button-text">Obtenir un devis</span>
+      </a>
+    </div>
+  </section>
+
+ <section id="services" class="section">
+    <div class="container">
+      <br>
+      <br>
+      <br>
+      <br><br><br>
+      <br><br><br>
+
+      <h2 class="section-title">Nos services</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="card-ico"><img src="img/emoticon1.webp" alt="Covering complet" class="card-icon-img"></div>
+          <h3>Covering complet</h3>
+          <p>Habillage intégral, rendu métallisé bleu-violet, joints soignés.</p>
+           <a class="card-more" href="services/covering-complet.html">En savoir plus </a>
+        </article>
+        <article class="card">
+          <div class="card-ico"><img src="img/emoticone2.webp" alt="Covering partiel" class="card-icon-img"></div>
+          <h3>Covering partiel</h3>
+          <p>Capot, toit, rétro, bandes &amp; accents créatifs, pose précise.</p>
+           <a class="card-more" href="services/covering-partiel.html">En savoir plus </a>
+        </article>
+        <article class="card">
+          <div class="card-ico"><img src="img/emoticone3.webp" alt="PPF" class="card-icon-img"></div>
+          <h3>PPF</h3>
+          <p>Film de protection transparent, anti-impacts &amp; micro-rayures.</p>
+          <a class="card-more" href="services/ppf.html">En savoir plus </a>
+        </article>
+        <article class="card">
+          <div class="card-ico"><img src="img/emoticone4.webp" alt="Design sur mesure" class="card-icon-img"></div>
+          <h3>Design sur mesure</h3>
+          <p>Création graphique, maquettes, prototypage &amp; rendus avant pose.</p>
+           <a class="card-more" href="services/design-sur-mesure.html">En savoir plus </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+
+<section id="galerie" class="section section-dark">
+  <div class="container">
+    <h2 class="section-title">Nos réalisations</h2>
+    <p style="color: var(--muted); font-size: 17px; margin-bottom: 2rem; max-width: 700px;">
+      Découvrez quelques-unes de nos créations récentes. Chaque projet est unique et reflète la passion que nous mettons dans notre travail.
+    </p>
+
+    <!-- Grille desktop/tablette (4 photos) -->
+    <div id="gallery" class="mosaic" aria-live="polite"></div>
+
+    <!-- Slider mobile -->
+    <div id="gallery-slider-wrap" class="gallery-slider-wrap" hidden>
+      <div class="swiper" id="gallery-slider">
+        <div class="swiper-wrapper"></div>
+        <div class="swiper-pagination" aria-label="Pagination de la galerie"></div>
+      </div>
+    </div>
+
+    <!-- Bouton pour voir toute la galerie -->
+    <div class="gallery-cta">
+      <a href="galerie.html" class="btn-gallery">
+        Voir toute la galerie
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section id="apropos" class="section">
+  <div class="container about">
+    <div class="about-text">
+      <p class="eyebrow">Atelier basé à Callian</p>
+      <h2 class="section-title">Excellence & Passion</h2>
+
+      <p class="lead">
+        FlowerWrap, c'est un atelier de <strong>covering automobile</strong> jeune et passionné, 
+        dédié aux particuliers comme aux professionnels. Chaque projet est une opportunité 
+        de transformer votre véhicule en véritable <strong>œuvre d'art roulante</strong>.
+      </p>
+
+      <ul class="checklist">
+        <li>Conseil personnalisé et choix des films premium</li>
+        <li>Pose soignée avec finitions professionnelles</li>
+        <li>Suivi après pose et garantie matériaux</li>
+      </ul>
+
+      <div class="badges">
+        <span class="badge">Local • Callian 83</span>
+        <span class="badge">Sur RDV uniquement</span>
+        <span class="badge">Particuliers & Pros</span>
+      </div>
+    </div>
+
+   <div class="about-visual">
+  <canvas id="flowerMascotte"></canvas>
+  <div id="mascotHint" class="mascot-hint" role="status" aria-live="polite">
+    👋 Touche et fais glisser !
+  </div>
+</div>
+  </div>
+</section>
+
+
+
+  <!-- FORMULAIRE CONTACT -->
+  <section id="contact" class="section section-dark">
+    <div class="container">
+      <h2 class="section-title">Obtenir un devis</h2>
+      <div class="contact-wrapper">
+        <div class="contact-info">
+          <h3 class="contact-info-title">Contactez-nous</h3>
+          <p class="contact-info-text">Remplissez le formulaire et notre équipe vous répondra sous 24h avec un devis personnalisé.</p>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">contact@flowerwrap.com</div>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">📞</div>
+            <div>
+              <div class="contact-label">Téléphone</div>
+              <div class="contact-value">07 50 83 66 51</div>
+            </div>
+          </div>
+          
+          <div class="contact-detail">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-label">Adresse</div>
+              <div class="contact-value">Chem. des Graous<br>83440 Callian, France</div>
+            </div>
+          </div>
+        </div>
+        
+        <form class="contact-form" id="contact-form">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nom">Nom complet *</label>
+              <input type="text" id="nom" name="nom" required placeholder="Jean Dupont">
+            </div>
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="jean@example.com">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="telephone">Téléphone</label>
+              <input type="tel" id="telephone" name="telephone" placeholder="+33 6 12 34 56 78">
+            </div>
+            <div class="form-group">
+              <label for="vehicule">Type de véhicule *</label>
+              <input type="text" id="vehicule" name="vehicule" required placeholder="Ex: Audi A3 2020">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="service">Service souhaité *</label>
+            <select id="service" name="service" required>
+              <option value="">Sélectionnez un service</option>
+              <option value="covering-complet">Covering complet</option>
+              <option value="covering-partiel">Covering partiel</option>
+              <option value="ppf">Film de protection (PPF)</option>
+              <option value="design-mesure">Design sur mesure</option>
+              <option value="autre">Autre / Consultation</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="message">Détails du projet *</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet, vos attentes, délais souhaités..."></textarea>
+          </div>
+          
+          <button type="submit" class="form-submit">
+            <span class="submit-bg"></span>
+            <span class="submit-text">Envoyer ma demande</span>
+          </button>
+          
+          <p class="form-notice">* Champs obligatoires</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+ <footer id="footer" class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <!-- Colonne 1 : Marque + petite description -->
+      <div class="footer-brand">
+        <div class="footer-logo-wrap">
+          <img src="img/logo.webp" alt="Logo FlowerWrap">
+          <span class="footer-brand-name">FLOWERWRAP</span>
+        </div>
+        <p class="footer-tagline">
+          Atelier de covering automobile à Callian. Travail soigné, rendu propre et durable.
+        </p>
+
+        <div class="footer-socials">
+          <a class="social-btn" href="https://www.instagram.com/flowerwrap83/" target="_blank" rel="noopener" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7m9.5 2a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3M12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10m0 2.1A2.9 2.9 0 1 0 14.9 12 2.9 2.9 0 0 0 12 9.1Z"/>
+            </svg>
+          </a>
+          <a class="social-btn" href="tel:+33750836651" aria-label="Téléphone">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Colonne 2 : Navigation -->
+      <div class="footer-section">
+        <h3 class="footer-title">Navigation</h3>
+        <ul class="footer-links">
+          <li><a href="#hero">Accueil</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#contact">Devis</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="copyright">
+      © <span id="year"></span> FlowerWrap — Tous droits réservés.
+    </div>
+  </div>
+</footer>
+
+  <!-- Scripts -->
+<!-- Rive UMD (global) -->
+<script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.9.1"></script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
