@@ -119,37 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
-// --- GESTION FORMULAIRE CONTACT ---
-(function(){
-  const form = document.getElementById('contact-form');
-  if (!form) return;
-  
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    
-    const formData = {
-      nom: form.nom.value,
-      email: form.email.value,
-      telephone: form.telephone.value,
-      vehicule: form.vehicule.value,
-      service: form.service.value,
-      message: form.message.value
-    };
-    
-    console.log('Données du formulaire:', formData);
-    
-    const submitBtn = form.querySelector('.form-submit');
-    const originalText = submitBtn.querySelector('.submit-text').textContent;
-    submitBtn.querySelector('.submit-text').textContent = '✓ Demande envoyée !';
-    submitBtn.style.pointerEvents = 'none';
-    
-    setTimeout(() => {
-      submitBtn.querySelector('.submit-text').textContent = originalText;
-      submitBtn.style.pointerEvents = '';
-      form.reset();
-    }, 3000);
-  });
-})();
+
 
 // === MASCOTTE RIVE ===
 (function () {
@@ -407,4 +377,45 @@ window.addEventListener('DOMContentLoaded', async () => {
       });
     }, { passive:true });
   }
+})();
+
+// Netlify Forms – envoi sans recharger la page
+(function () {
+  const form = document.getElementById('contactForm');
+  const notice = document.getElementById('formNotice');
+  if (!form || !notice) return;
+
+  const show = (msg, ok = true) => {
+    notice.style.display = 'block';
+    notice.textContent = msg;
+    notice.style.color = ok ? '#9BE19B' : '#FF9B9B';
+  };
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const submitBtn = form.querySelector('.form-submit');
+    submitBtn?.setAttribute('disabled', 'true');
+
+    const data = new FormData(form);
+    // Netlify exige form-name dans le payload
+    if (!data.get('form-name')) data.append('form-name', form.getAttribute('name'));
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString(),
+      });
+      if (res.ok) {
+        form.reset();
+        show('✅ Merci ! Votre message a bien été envoyé.');
+      } else {
+        show("❌ Oups, une erreur est survenue. Réessayez plus tard.", false);
+      }
+    } catch (err) {
+      show("❌ Impossible d'envoyer le formulaire (connexion).", false);
+    } finally {
+      submitBtn?.removeAttribute('disabled');
+    }
+  });
 })();
