@@ -5,10 +5,20 @@
   "main": "index.html",
   "scripts": {
     "start": "npx live-server .",
-    "build": "echo 'Aucun build requis - site statique.'"
+    "build": "echo 'Aucun build requis - site statique.'",
+    "thumbs": "node scripts/generate-thumbs.js",
+    "dependencies": {},
+    "author": "Noa Bendiaf",
+    "license": "MIT",
+    "keywords": [
+      "covering",
+      "automobile",
+      "vitrine",
+      "netlify",
+      "flowerwrap"
+    ]
   },
-  "author": "Noa Bendiaf",
-  "license": "MIT",
-  "keywords": ["covering", "automobile", "vitrine", "netlify", "flowerwrap"],
-  "dependencies": {}
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
 }

@@ -10,17 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   
   <!-- Swiper -->
-  <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
-  <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
+
 
   <!-- Styles -->
   <link rel="stylesheet" href="style.css">
   <style>
   /* ... (tes règles au-dessus ne changent pas) ... */
 
+
+  
   @media (max-width: 768px) {
     .gallery-hero {
-      padding: 120px 0 40px;
+      padding: 120px 5px 40px;
     }
 
     .gallery-hero h1 {
@@ -62,6 +63,89 @@
   @media (min-width: 769px){
     #gallery-slider-wrap{ display: none !important; }
   }
+
+  /* Grille stable (évite les sauts) */
+#gallery.gallery-full {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+@media (max-width: 1024px){
+  #gallery.gallery-full { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px){
+  #gallery.gallery-full { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+/* Carte image avec ratio fixe -> pas de CLS */
+.gallery-item {
+  position: relative;
+  aspect-ratio: 4 / 3;              /* réserve la place */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #111318;              /* placeholder */
+}
+
+/* L'image occupe son cadre, sans déformer */
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Petit skeleton (optionnel) */
+.gallery-item::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,#151823, #1a1d29 40%, #151823);
+  animation: shimmer 1.2s infinite;
+}
+.gallery-item.loaded::before { display: none; }
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+
+
+/* La carte peut "flotter" au-dessus des voisines sans casser la grille */
+.gallery-item{
+  position: relative;
+  isolation: isolate;              /* crée un nouveau stacking context */
+  transform: translateZ(0);        /* active l'accélération GPU */
+  transition: transform .28s ease, box-shadow .28s ease;
+  will-change: transform;
+  z-index: 0;                      /* normal à l'état repos */
+}
+
+/* Au survol : on agrandit la **carte**, pas l'image */
+@media (hover:hover){
+  #gallery.gallery-full .gallery-item:hover{
+    transform: scale(1.04);        /* ← ajuste: 1.03 (soft) à 1.07 (plus marqué) */
+    z-index: 2;                    /* passe au-dessus des voisines pendant l'anim */
+    box-shadow: 0 14px 40px rgba(113,108,250,.25);
+  }
+}
+
+/* Accessibilité clavier (tab sur le lien) */
+.gallery-item:focus-within{
+  transform: scale(1.03);
+  z-index: 2;
+  box-shadow: 0 14px 36px rgba(113,108,250,.22);
+}
+
+/* Évite l'effet sur mobile tactile */
+@media (hover:none){
+  #gallery.gallery-full .gallery-item{ transform: none !important; box-shadow: none !important; }
+}
+
+/* Optionnel : garde ton overlay en place au-dessus de l'image quand la carte grossit */
+.gallery-item::after{ pointer-events: none; }
+
+
 </style>
 
 </head>
@@ -157,6 +241,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="galerie.js"></script>
+  <script src="/scripts/galerie.js"></script>
 </body>
 </html>

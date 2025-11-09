@@ -1,18 +1,33 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="Atelier de covering automobile à Callian (Var), proche des Alpes-Maritimes. FlowerWrap réalise covering complet, partiel, PPF et design sur mesure pour voitures sportives et haut de gamme à Cannes, Grasse, Fréjus et toute la Côte d’Azur.">
+<meta name="keywords" content="covering voiture var, covering callian, covering cannes, covering grasse, covering fréjus, covering ppf, covering premium, covering automobile côte d’azur, covering alpes maritimes, film de protection voiture, design sur mesure auto, atelier covering var, flowerwrap">
+<meta name="author" content="FlowerWrap">
+
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B0B0E">
+
   <title>FlowerWrap – Covering automobile premium</title>
   
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kollektif&display=swap" rel="stylesheet">
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <!-- Libs (CDN) -->
   <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
   <script src="https://unpkg.com/gsap@3/dist/ScrollToPlugin.min.js"></script>
   <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  
+  (function(){ emailjs.init({ publicKey: "Cj5r-B8kK3ilWOkBS" }); })();
+</script>
+
   <!-- Swiper (CSS + JS) -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@10/swiper-bundle.min.css">
   <script src="https://unpkg.com/swiper@10/swiper-bundle.min.js"></script>
@@ -30,11 +45,12 @@
           <span class="brand__name">FLOWERWRAP</span>
         </div>
         <nav class="nav" id="primary-nav">
-          <a href="#hero">Accueil</a>
-          <a href="#services">Services</a>
-          <a href="#galerie">Galerie</a>
-          <a href="#contact">Contact</a>
-        </nav>
+  <a href="#hero">Accueil</a>
+  <a href="#services">Services</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#apropos">À propos</a>
+  <a href="#contact">Contact</a>
+</nav>
         <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
           <span class="bar"></span><span class="bar"></span><span class="bar"></span>
         </button>
@@ -134,12 +150,13 @@
       <p class="eyebrow">Atelier basé à Callian</p>
       <h2 class="section-title">Excellence & Passion</h2>
 
-      <p class="lead">
-        FlowerWrap, c'est un atelier de <strong>covering automobile</strong> jeune et passionné, 
-        dédié aux particuliers comme aux professionnels. Chaque projet est une opportunité 
-        de transformer votre véhicule en véritable <strong>œuvre d'art roulante</strong>.
-      </p>
-
+    <p class="lead">
+  FlowerWrap, c’est un atelier de <strong>covering automobile</strong> passionné, 
+  situé à Callian, entre le Var et les Alpes-Maritimes. 
+  Nous accompagnons une clientèle exigeante de <strong>Cannes, Grasse, Mandelieu ou Fréjus</strong>, 
+  pour sublimer leurs véhicules avec des finitions haut de gamme.
+</p>
+      
       <ul class="checklist">
         <li>Conseil personnalisé et choix des films premium</li>
         <li>Pose soignée avec finitions professionnelles</li>
@@ -198,47 +215,34 @@
           </div>
         </div>
         
-        <form id="contactForm"
-      name="contact"
-      method="POST"
-      data-netlify="true"
-      netlify-honeypot="bot-field"
-      class="contact-form">
-
-  <!-- requis par Netlify -->
-  <input type="hidden" name="form-name" value="contact" />
-  <!-- honeypot anti-spam (caché via CSS si tu veux) -->
-  <p style="display:none">
-    <label>Ne pas remplir : <input name="bot-field" /></label>
-  </p>
-
+        <form id="contactForm" class="contact-form">
   <div class="form-row">
     <div class="form-group">
       <label for="nom">Nom</label>
-      <input id="nom" name="nom" type="text" required autocomplete="name" placeholder="Jean Dupont">
+      <input id="nom" name="user_name" type="text" required placeholder="Jean Dupont" autocomplete="name">
     </div>
 
     <div class="form-group">
       <label for="email">Email</label>
-      <input id="email" name="email" type="email" required autocomplete="email" placeholder="jean@example.com">
+      <input id="email" name="user_email" type="email" required placeholder="jean@example.com" autocomplete="email">
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group">
       <label for="telephone">Téléphone</label>
-      <input id="telephone" name="telephone" type="tel" autocomplete="tel" placeholder="+33 6 12 34 56 78">
+      <input id="telephone" name="phone" type="tel" placeholder="+33 6 12 34 56 78" autocomplete="tel">
     </div>
 
     <div class="form-group">
       <label for="vehicule">Véhicule</label>
-      <input id="vehicule" name="vehicule" type="text" required placeholder="Ex: Audi A3 2020">
+      <input id="vehicule" name="vehicle" type="text" required placeholder="Ex: Audi A3 2020">
     </div>
   </div>
 
   <div class="form-group">
     <label for="prestation">Prestation</label>
-    <select id="prestation" name="prestation">
+    <select id="prestation" name="service">
       <option value="Covering complet">Covering complet</option>
       <option value="Covering partiel">Covering partiel</option>
       <option value="PPF">PPF</option>
@@ -251,15 +255,21 @@
     <textarea id="message" name="message" rows="5" required placeholder="Décrivez votre projet..."></textarea>
   </div>
 
-  <button type="submit" class="form-submit">
-    <span class="submit-bg"></span>
-    <div data-netlify-recaptcha="true"></div>
+  <!-- 🛡️ Honeypot anti-spam -->
+  <input type="text" name="website" style="display:none">
 
+  <!-- 📬 Champ caché : destinataire (ton client) -->
+  <input type="hidden" name="to_email" value="Florianmouret.contact@gmail.com">
+
+  <button type="submit" class="form-submit">
+    <span class="submit-bg" aria-hidden="true"></span>
     <span class="submit-text">Envoyer</span>
   </button>
 
   <p id="formNotice" class="form-notice" aria-live="polite" style="display:none;"></p>
 </form>
+
+
       </div>
     </div>
   </section>
@@ -273,10 +283,11 @@
           <img src="img/logo.webp" alt="Logo FlowerWrap">
           <span class="footer-brand-name">FLOWERWRAP</span>
         </div>
-        <p class="footer-tagline">
-          Atelier de covering automobile à Callian. Travail soigné, rendu propre et durable.
-        </p>
-
+       <p class="footer-tagline">
+  Atelier de covering automobile à Callian.<br>
+  Interventions dans le Var et les Alpes-Maritimes (Cannes, Grasse, Fréjus…)
+</p>
+        
         <div class="footer-socials">
           <a class="social-btn" href="https://www.instagram.com/flowerwrap83/" target="_blank" rel="noopener" aria-label="Instagram">
             <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
@@ -316,7 +327,7 @@
   <!-- Scripts -->
 <!-- Rive UMD (global) -->
 <script src="https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.9.1"></script>
-<script src="script.js"></script>
+<script src="/scripts/script.js"></script>
 
 
 </body>

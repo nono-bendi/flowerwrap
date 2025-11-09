@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+
+# Empêche les crawlers d'explorer les dossiers non utiles
+Disallow: /node_modules/
+Disallow: /assets/
+Disallow: /scripts/
+Disallow: /admin/
+Disallow: /temp/
+Disallow: /tests/
+
+# Indique ton sitemap (à créer plus tard)
+Sitemap: https://flowerwrap.netlify.app/sitemap.xml
