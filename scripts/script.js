@@ -62,8 +62,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // ========= HERO BLUR TEXT (GSAP + SplitType, par MOT) =========
+ // ========= HERO BLUR TEXT (GSAP + SplitType, par MOT) =========
   const h1 = $('#hero-title');
+  const subtitle = $('.hero-subtitle');
   if (h1 && !window._heroAnimDone) {
     window._heroAnimDone = true;
 
@@ -76,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
         h1.style.visibility = 'visible';
         split.words.forEach(w => (w.style.willChange = 'transform,opacity,filter'));
 
+        // Animation du titre
         gsap.fromTo(
           split.words,
           { y: 40, opacity: 0, filter: 'blur(12px)' },
@@ -89,9 +91,23 @@ document.addEventListener('DOMContentLoaded', () => {
             onComplete: () => split.words.forEach(w => (w.style.willChange = 'auto'))
           }
         );
+
+        // Animation du subtitle (apparaît après le titre)
+        if (subtitle) {
+          gsap.fromTo(
+            subtitle,
+            { y: 20, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1,
+              ease: 'power3.out',
+              delay: 0.8
+            }
+          );
+        }
       });
     }
-
     function kickWhenInView() {
       fontsReady.then(() => {
         const io = ('IntersectionObserver' in window)
@@ -328,8 +344,8 @@ window.addEventListener('DOMContentLoaded', async () => {
 
   // 💬 Définit le bon texte selon l’écran
   hint.textContent = isMobile
-    ? '👋 Touche et fais glisser !'
-    : '👀 Pssst… regarde-moi !';
+    ? '👀 Touche et fais glisser !'
+    : '👀 Pssst… Survole-moi !';
 
   let shown = false;
   const once = () => { if(shown) return true; shown = true; return false; };
@@ -474,3 +490,4 @@ document.querySelectorAll('.site-header .nav a').forEach(link => {
     setTimeout(updateActiveNavLink, 100);
   });
 });
+

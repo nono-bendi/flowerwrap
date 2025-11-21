@@ -1,39 +1,147 @@
 [
-  {"type":"image","alt":"lamborghini (studio plafond hexagones)","src":"img/car/lamborginie.webp"},
-
-  {"type":"image","alt":"IMG 6956 (scooter orange)","src":"img/car/IMG_6956.webp"},
-
-  {"type":"image","alt":"IMG 6811 (atelier plafond hexagones)","src":"img/car/IMG_6811.webp"},
-
-  {"type":"image","alt":"IMG 5087","src":"img/car/IMG_5087.webp"},
-
-  {"type":"image","alt":"IMG 6858 (bleue en atelier)","src":"img/car/IMG_6858.webp"},
-
-  {"type":"image","alt":"IMG 6449","src":"img/car/IMG_6449.webp"},
-  {"type":"image","alt":"508 gris mat","src":"img/car/508-gris-mat.webp"},
-  {"type":"image","alt":"audi bleu","src":"img/car/audi-bleu.webp"},
-  {"type":"image","alt":"audi bleu back","src":"img/car/audi-bleu-back.webp"},
-  {"type":"image","alt":"IMG 6132","src":"img/car/IMG_6132.webp"},
-  {"type":"image","alt":"IMG 6244","src":"img/car/IMG_6244.webp"},
-  {"type":"image","alt":"IMG 6445","src":"img/car/IMG_6445.webp"},
-  
-  {"type":"image","alt":"IMG 6550","src":"img/car/IMG_6550.webp"},
-  {"type":"image","alt":"IMG 6555","src":"img/car/IMG_6555.webp"},
-  {"type":"image","alt":"IMG 6560 (détail carrosserie)","src":"img/car/IMG_6560.webp"},
-  {"type":"image","alt":"IMG 6657 (logo pare-brise)","src":"img/car/IMG_6657.webp"},
-  {"type":"image","alt":"IMG 6757","src":"img/car/IMG_6757.webp"},
-  {"type":"image","alt":"IMG 6795","src":"img/car/IMG_6795.webp"},
-  {"type":"image","alt":"IMG 6801 (atelier rouge 3/4)","src":"img/car/IMG_6801.webp"},
-  {"type":"image","alt":"IMG 6805 (atelier rouge capot ouvert)","src":"img/car/IMG_6805.webp"},
-  {"type":"image","alt":"IMG 6813 (bleue en atelier)","src":"img/car/IMG_6813.webp"},
-  
-  {"type":"image","alt":"IMG 6890 (bleu foncé 3/4)","src":"img/car/IMG_6890.webp"},
-  {"type":"image","alt":"IMG 6893 (break bleu)","src":"img/car/IMG_6893.webp"},
-  {"type":"image","alt":"IMG 6899 (coupé noir)","src":"img/car/IMG_6899.webp"},
-  {"type":"image","alt":"IMG 6915 (blanche arrière 3/4)","src":"img/car/IMG_6915.webp"},
-  {"type":"image","alt":"IMG 6957 (scooter orange autre vue)","src":"img/car/IMG_6957.webp"},
-  {"type":"image","alt":"range rover (extérieur)","src":"img/car/range-rover.webp"},
-  {"type":"image","alt":"range rover (intérieur)","src":"img/car/IMG_6970.webp"},
-  {"type":"image","alt":"range rover (intérieur)","src":"img/car/IMG_6972.webp"}
-
+  {
+    "src": "img/car/lamborginie.webp",
+    "title": "Lamborghini Huracán - Mat Kaki & XPEL",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6956.webp",
+    "title": "Yamaha TMAX 560 - Sport Orange & Noir",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6957.webp",
+    "title": "Yamaha TMAX - Détails Finition",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6811.webp",
+    "title": "Ferrari SF90 Stradale - Supercar Hybride",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_5087.webp",
+    "title": "Tracteur Lamborghini - Custom Racing",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6449.webp",
+    "title": "Land Rover Defender - Édition Military",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6972.webp",
+    "title": "BMW S1000R - Full Black Mat",
+    "category": "total"
+  },
+  {
+    "src": "img/car/508-gris-mat.webp",
+    "title": "Peugeot 2008 - Gris Foncé Métallisé",
+    "category": "total"
+  },
+  {
+    "src": "img/car/audi-bleu.webp",
+    "title": "Audi A5 Sportback - Bleu Mat",
+    "category": "total"
+  },
+  {
+    "src": "img/car/audi-bleu-back.webp",
+    "title": "Audi A5 Sportback - Vue Arrière",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6132.webp",
+    "title": "Seat Ibiza - Gris Foncé Métallisé",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6244.webp",
+    "title": "Royal Enfield Himalayan - Aventure",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6445.webp",
+    "title": "Defender Military - Vue 3/4",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6550.webp",
+    "title": "BMW Série 3 Touring - M Performance",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6555.webp",
+    "title": "BMW Série 3 Touring - Vue Arrière",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6560.webp",
+    "title": "BMW M Performance - Focus Jantes",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6657.webp",
+    "title": "Van - Marquage 'Le Van Français'",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6757.webp",
+    "title": "Tonneau Déco - Design Doodle 'BASE'",
+    "category": "protection"
+  },
+  {
+    "src": "img/car/IMG_6795.webp",
+    "title": "Audi RS3 - Kaki Mat & Étriers Jaunes",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6801.webp",
+    "title": "Ferrari California - Rouge Vif",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6805.webp",
+    "title": "Ferrari California - Toit Noir & Écusson",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6813.webp",
+    "title": "Ferrari 296 GTB - Bleu Nuit",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6890.webp",
+    "title": "Xpeng G9 - Bi-ton Bleu/Gris",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6893.webp",
+    "title": "Xpeng G9 - Profil SUV",
+    "category": "partiel"
+  },
+  {
+    "src": "img/car/IMG_6899.webp",
+    "title": "Ferrari Purosangue - Gris Foncé",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6915.webp",
+    "title": "BMW M2 (F87) - Blanche & Carbone",
+    "category": "protection"
+  },
+  {
+    "src": "img/car/range-rover.webp",
+    "title": "Nissan Patrol GR - Préparation Off-Road",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6970.webp",
+    "title": "BMW S1000R - Full Black Mat (Vue Arrière)",
+    "category": "total"
+  },
+  {
+    "src": "img/car/IMG_6858.webp",
+    "title": "Porsche 718 Cayman - Bleu Racing",
+    "category": "total"
+  }
 ]
