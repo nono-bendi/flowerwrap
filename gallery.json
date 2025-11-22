@@ -9,11 +9,13 @@
     "title": "Yamaha TMAX 560 - Sport Orange & Noir",
     "category": "partiel"
   },
+
   {
-    "src": "img/car/IMG_6957.webp",
-    "title": "Yamaha TMAX - Détails Finition",
-    "category": "partiel"
+    "src": "img/car/IMG_6899.webp",
+    "title": "Ferrari Purosangue - Gris Foncé",
+    "category": "total"
   },
+
   {
     "src": "img/car/IMG_6811.webp",
     "title": "Ferrari SF90 Stradale - Supercar Hybride",
@@ -24,16 +26,18 @@
     "title": "Tracteur Lamborghini - Custom Racing",
     "category": "partiel"
   },
+{
+    "src": "img/car/IMG_6972.webp",
+    "title": "BMW S1000R - Full Black Mat",
+    "category": "total"
+  },
+
   {
     "src": "img/car/IMG_6449.webp",
     "title": "Land Rover Defender - Édition Military",
     "category": "partiel"
   },
-  {
-    "src": "img/car/IMG_6972.webp",
-    "title": "BMW S1000R - Full Black Mat",
-    "category": "total"
-  },
+  
   {
     "src": "img/car/508-gris-mat.webp",
     "title": "Peugeot 2008 - Gris Foncé Métallisé",
@@ -119,11 +123,7 @@
     "title": "Xpeng G9 - Profil SUV",
     "category": "partiel"
   },
-  {
-    "src": "img/car/IMG_6899.webp",
-    "title": "Ferrari Purosangue - Gris Foncé",
-    "category": "total"
-  },
+  
   {
     "src": "img/car/IMG_6915.webp",
     "title": "BMW M2 (F87) - Blanche & Carbone",
@@ -143,5 +143,11 @@
     "src": "img/car/IMG_6858.webp",
     "title": "Porsche 718 Cayman - Bleu Racing",
     "category": "total"
+  },
+
+    {
+    "src": "img/car/IMG_6957.webp",
+    "title": "Yamaha TMAX - Détails Finition",
+    "category": "partiel"
   }
 ]

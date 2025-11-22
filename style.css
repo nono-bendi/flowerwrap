@@ -1,6 +1,4 @@
 /* Reset local (remplace l'import cdnjs) */
-@import url('https://fonts.googleapis.com/css2?family=Saira:wght@700;800&display=swap');
-
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -24,13 +22,13 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
 .site-header{ margin-top:55px!important; top:0; padding-top:0; position:fixed; left:0; width:100%; z-index:200; background:transparent; }
 .site-header .header-container{ width:100%; padding:0; display:flex; align-items:center; }
 .brand{ position:absolute; left:4%; display:flex; align-items:center; gap:12px; z-index:101; }
-.brand__logo{ width:75px!important; height:auto!important; }
+.brand__logo{ width:55px!important; height:auto!important; }
 .brand__name{
   font-size:26px!important; font-weight:800; letter-spacing:1.5px;
   background:linear-gradient(90deg,#716CFA 0%,#3D2BFF 100%);
   -webkit-background-clip:text; background-clip:text;
   -webkit-text-fill-color:transparent;
-  font-family: "Saira", "Inter", sans-serif;
+  font-family: "Kollektif", sans-serif;
 }
 .site-header .nav{ position:absolute; right:25%; display:flex; align-items:center; gap:32px; z-index:101; font-smooth: antialiased; -webkit-font-smoothing: antialiased; }
 .site-header .nav a{ position: relative; display: inline-block; font-family: "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif; font-weight: 500; font-size: 16.5px; letter-spacing: 0.2px; color: var(--nav-inactive); text-decoration:none; transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease; opacity: 0.85; line-height:1; }
@@ -684,19 +682,9 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
   .brand__name{ font-size:18px; }
 }
 
-.nav-toggle{
-  display:none!important; position:absolute; right:4%; bottom:4%;
-  width:47px; height:38px; border:1px solid rgba(255,255,255,.15);
-  background:rgba(11,11,14,.35); border-radius:10px; cursor:pointer; z-index:200;
-}
-.nav-toggle .bar{ display:block; width:22px; height:2px; margin:6px auto; background:#EDEDEF; transition:transform .25s ease, opacity .25s ease; }
-.nav-toggle[aria-expanded="true"] .bar:nth-child(1){ transform:translateY(8px) rotate(45deg); }
-.nav-toggle[aria-expanded="true"] .bar:nth-child(2){ opacity:0; }
-.nav-toggle[aria-expanded="true"] .bar:nth-child(3){ transform:translateY(-8px) rotate(-45deg); }
 
-@media (max-width:980px){
-  .nav-toggle{ display:flex!important; flex-direction:column; justify-content:center; align-items:center; position:absolute; right:4%; top:36px; width:40px; height:40px; border:1px solid rgba(255,255,255,.15); background:rgba(11,11,14,.35); border-radius:8px; cursor:pointer; z-index:1200; padding:0; }
-  .nav-toggle .bar{ margin:3px 0; }
+
+
   .site-header .nav{
     position:fixed!important; top:0; right:0; height:100dvh; width:min(78vw,340px);
     background:rgba(12,12,16,.92); backdrop-filter:blur(8px) saturate(120%);
@@ -1758,7 +1746,7 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
 
 
 .brand__name{
-  font-family:'Saira', 'Inter', system-ui, sans-serif;
+  font-family:'Poppins', 'Inter', system-ui, sans-serif;
   font-size:30px;
   font-weight:700;
   letter-spacing:1px;
@@ -1889,4 +1877,91 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
     height: clamp(520px, 72vh, 660px) !important;
     min-height: 520px;
   }
+}
+
+
+/* === REMPLACE TOUT LE BLOC .NAV-TOGGLE PAR CECI === */
+
+.nav-toggle {
+  display: none !important; /* Caché sur PC */
+  position: absolute;
+  right: 4%;
+  /* Positionnement vertical pour mobile */
+  top: calc(max(env(safe-area-inset-top, 0px), 15px) + 12px);
+  
+  /* Dimensions EXACTES de la galerie */
+  width: 47px; 
+  height: 38px;
+  
+  /* Style visuel EXACT de la galerie */
+  background: rgba(11, 11, 14, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Force la bordure fine */
+  border-radius: 10px;
+  
+  /* Nettoyage des styles par défaut (enlève la grosse bordure blanche) */
+  outline: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  appearance: none;
+  
+  cursor: pointer;
+  z-index: 3000;
+  padding: 0;
+}
+
+/* Affichage sur Mobile/Tablette */
+@media (max-width: 980px) {
+  .nav-toggle {
+    display: block !important;
+  }
+}
+
+/* Style des 3 barres */
+.nav-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #EDEDEF;
+  border-radius: 2px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centrage horizontal */
+  transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease, bottom 0.25s ease;
+}
+
+/* === POSITIONNEMENT FERMÉ (3 barres) === */
+/* Barre 1 (Haut) */
+.nav-toggle .bar:nth-child(1) {
+  top: 11px; 
+}
+
+/* Barre 2 (Milieu) */
+.nav-toggle .bar:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Barre 3 (Bas) */
+.nav-toggle .bar:nth-child(3) {
+  bottom: 11px;
+}
+
+/* === ANIMATION OUVERT (Croix) === */
+
+/* Barre 1 : Descend au milieu et tourne */
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Barre 2 : Disparaît */
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+
+/* Barre 3 : Monte au milieu et tourne (on enlève le bottom) */
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
+  top: 50%;
+  bottom: auto; 
+  transform: translate(-50%, -50%) rotate(-45deg);
 }
