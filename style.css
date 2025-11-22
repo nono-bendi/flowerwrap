@@ -1,4 +1,6 @@
 /* Reset local (remplace l'import cdnjs) */
+@import url('https://fonts.googleapis.com/css2?family=Saira:wght@700;800&display=swap');
+
 *,
 *::before,
 *::after { box-sizing: border-box; }
@@ -22,13 +24,13 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
 .site-header{ margin-top:55px!important; top:0; padding-top:0; position:fixed; left:0; width:100%; z-index:200; background:transparent; }
 .site-header .header-container{ width:100%; padding:0; display:flex; align-items:center; }
 .brand{ position:absolute; left:4%; display:flex; align-items:center; gap:12px; z-index:101; }
-.brand__logo{ width:85px!important; height:auto!important; }
+.brand__logo{ width:75px!important; height:auto!important; }
 .brand__name{
   font-size:26px!important; font-weight:800; letter-spacing:1.5px;
   background:linear-gradient(90deg,#716CFA 0%,#3D2BFF 100%);
   -webkit-background-clip:text; background-clip:text;
   -webkit-text-fill-color:transparent;
-  font-family: "Kollektif", sans-serif;
+  font-family: "Saira", "Inter", sans-serif;
 }
 .site-header .nav{ position:absolute; right:25%; display:flex; align-items:center; gap:32px; z-index:101; font-smooth: antialiased; -webkit-font-smoothing: antialiased; }
 .site-header .nav a{ position: relative; display: inline-block; font-family: "SF Pro Display", "Inter", "Segoe UI", system-ui, sans-serif; font-weight: 500; font-size: 16.5px; letter-spacing: 0.2px; color: var(--nav-inactive); text-decoration:none; transition: color 0.25s ease, opacity 0.25s ease, transform 0.25s ease; opacity: 0.85; line-height:1; }
@@ -60,40 +62,64 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
 
 .hero-title,.hero-button{ z-index:10; }
 
-.hero-button{
-  position:absolute;
-  left:4%;
-  bottom:45%;
-  width:250px;
-  height:72px;
-  cursor:pointer;
-  text-decoration:none;
-  transition:transform .2s ease;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  overflow:visible;
-  border-radius:30px;
-  touch-action:manipulation;
-  background:transparent;
-  border:none;
-  -webkit-tap-highlight-color:transparent;
+/* ========================================
+   BOUTON HERO - VERSION PROPRE
+   ======================================== */
+
+.hero-button {
+  position: absolute;
+  left: 4%;
+  bottom: 45%;
+  width: 250px;
+  height: 72px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  border-radius: 30px;
+  touch-action: manipulation;
+  background: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+  z-index: 10;
 }
 
-
-
-.hero-button:hover{ transform:translateY(-2px); }
-.button-bg{
-  position:absolute;
-  inset:0;
-  background:#3b3ab7;
-  border-radius:30px;
-  border:1px solid #4243ce;
-  box-shadow:0 10px 28px rgba(59,58,183,.35);
-  transition:all .3s ease;
+.hero-button:hover {
+  transform: translateY(-2px);
 }
-.hero-button:hover .button-bg{ background:#4a4ad4; box-shadow:0 4px 12px rgba(59,58,183,.4); }
-.button-text{ position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-family:"Inter",Helvetica; font-weight:400; color:#d0d4f5; font-size:21px; white-space:nowrap; pointer-events:none; }
+
+.button-bg {
+  position: absolute;
+  inset: 0;
+  background: #3b3ab7;
+  border-radius: 30px;
+  border: 1px solid #4243ce;
+  box-shadow: 0 10px 28px rgba(59, 58, 183, 0.35);
+  transition: all 0.3s ease;
+}
+
+.hero-button:hover .button-bg {
+  background: #4a4ad4;
+  box-shadow: 0 4px 12px rgba(59, 58, 183, 0.4);
+}
+
+.button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #d0d4f5;
+  font-size: 21px;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+/* --- RESPONSIVE --- */
 
 .container{ width:100%; max-width:1400px; margin:0 auto; padding:0 40px; }
 .section{ padding:100px 0; }
@@ -650,14 +676,10 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
   .cards{ grid-template-columns:repeat(2,1fr); }
   .about{ grid-template-columns:1fr; }
   .mosaic{ grid-template-columns:1fr; }
-  .hero-title{ font-size:36px; max-width:500px; }
   .site-header .nav{ gap:20px; }
 }
 @media (max-width:768px){
   .cards{ grid-template-columns:1fr; }
-  .hero-title{ font-size:32px; top:25%; }
-  .hero-button{ width:200px; height:60px; }
-  .button-text{ font-size:18px; }
   .hero-section{ min-height:550px; }
   .brand__name{ font-size:18px; }
 }
@@ -697,33 +719,40 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
     z-index:2!important; pointer-events:none;
   }
   .hero-content{ position:absolute!important; inset:0!important; width:100%!important; height:100%!important; z-index:1!important; }
-  .hero-title,.hero-button,.brand{ position:relative; z-index:21!important; }
-  .hero-title{ font-size:36px; max-width:500px; top:30%!important; }
-  .hero-button{
-    left:2%!important;
-    bottom:-22%!important;
-    width:180px!important;
-    height:45px!important;
-    transform:none!important;
+  /* ========================================
+   CORRECTIONS ADDITIONNELLES
+   ======================================== */
+
+/* Assurer que le hero-section a une hauteur cohérente */
+.hero-section {
+  height: clamp(520px, 80vh, 760px);
+  position: relative;
+}
+
+@media (max-width: 980px) {
+  .hero-section {
+    height: clamp(460px, 70vh, 600px);
   }
-  .hero-button .button-text{ font-size:18px!important; color:#d0d4f5!important; }
-  .hero-button .button-bg{ border-radius:30px; background:#3b3ab7; border:1px solid #4243ce; box-shadow:0 4px 12px rgba(59,58,183,.4); }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: clamp(420px, 65vh, 540px);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: clamp(500px, 75vh, 600px);
+  }
+}
+
   .section,#services{ background:var(--bg, #0B0B0E); margin-top:-80px; padding-top:80px; }
   .hero-section{ height:clamp(460px, 70vh, 600px); }
-}
-@media (max-width:768px){
-  .hero-background{ object-fit:contain; object-position:center bottom; transform:scale(1.05); }
-  .hero-section{ height:clamp(420px, 65vh, 540px); }
-  .hero-title{ top:30%!important; }
 }
 @media (max-width:360px){
   .brand{ transform:translateY(6px); }
   .nav-toggle{ top:calc(max(env(safe-area-inset-top, 0px), 6px) + 14px)!important; }
-  .hero-button{
-    width:190px!important;
-    height:48px!important;
-    bottom:18%!important;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1729,7 +1758,7 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
 
 
 .brand__name{
-  font-family:'Poppins', 'Inter', system-ui, sans-serif;
+  font-family:'Saira', 'Inter', system-ui, sans-serif;
   font-size:30px;
   font-weight:700;
   letter-spacing:1px;
@@ -1738,4 +1767,126 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
   -webkit-background-clip:text;
   background-clip:text;
   -webkit-text-fill-color:transparent;
+}
+
+
+/* ========================================
+   CORRECTION MOBILE HERO - VERSION STABLE
+   Position relative entre titre et bouton
+   ======================================== */
+
+/* --- BASE MOBILE (≤ 980px) --- */
+@media (max-width: 980px) {
+  .hero-content {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+  
+  .hero-title {
+    position: absolute !important;
+    top: 15vh !important;
+    left: 4% !important;
+    transform: none !important;
+    font-size: 36px;
+    max-width: 500px;
+    text-align: left;
+    z-index: 10;
+  }
+  
+  .hero-button {
+    position: absolute !important;
+    top: calc(15vh + 120px) !important;
+    left: 4% !important;
+    bottom: auto !important;
+    transform: none !important;
+    width: 200px;
+    height: 58px;
+    z-index: 10;
+  }
+  
+  .hero-button:hover {
+    transform: translateY(-2px) !important;
+  }
+  
+  .button-text {
+    font-size: 18px;
+  }
+}
+
+/* --- MOBILE PORTRAIT (≤ 768px) --- */
+@media (max-width: 768px) {
+  .hero-title {
+    top: 16vh !important;
+    font-size: 32px;
+    max-width: 90%;
+  }
+  
+  .hero-button {
+    top: calc(16vh + 110px) !important;
+    width: 180px;
+    height: 52px;
+  }
+  
+  .button-text {
+    font-size: 16px;
+  }
+}
+
+/* --- PETIT MOBILE (≤ 480px) --- */
+@media (max-width: 480px) {
+  .hero-title {
+    top: 15vh !important;
+    font-size: 28px;
+    max-width: 88%;
+    line-height: 1.2;
+  }
+  
+  .hero-button {
+    top: calc(15vh + 105px) !important;
+    width: 170px;
+    height: 50px;
+  }
+  
+  .button-text {
+    font-size: 15px;
+  }
+}
+
+/* --- TRÈS PETIT MOBILE (≤ 360px) --- */
+@media (max-width: 360px) {
+  .hero-title {
+    top: 14vh !important;
+    font-size: 26px;
+    max-width: 85%;
+  }
+  
+  .hero-button {
+    top: calc(14vh + 95px) !important;
+    width: 165px;
+    height: 48px;
+  }
+  
+  .button-text {
+    font-size: 14px;
+  }
+}
+
+/* ========================================
+   AJUSTEMENT HAUTEUR HERO MOBILE
+   ======================================== */
+@media (max-width: 768px) {
+  .hero-section {
+    height: clamp(500px, 70vh, 650px) !important;
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    height: clamp(520px, 72vh, 660px) !important;
+    min-height: 520px;
+  }
 }
