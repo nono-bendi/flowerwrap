@@ -1834,6 +1834,77 @@ body{ font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif; ba
 
 
 
+/* === BOUTON BURGER (STYLE GALERIE) === */
 
+.nav-toggle {
+  display: none !important; /* Caché sur PC */
+  position: absolute;
+  right: 4%;
+  /* Position calculée pour être alignée comme sur la galerie */
+  top: calc(max(env(safe-area-inset-top, 0px), 15px) + 12px);
+  
+  width: 47px;
+  height: 38px;
+  
+  /* Style visuel identique à la galerie */
+  background: rgba(11, 11, 14, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 3000; /* Toujours au-dessus */
+  padding: 0;
+  
+  /* On s'assure qu'il n'y a pas de styles par défaut gênants */
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Affichage sur Mobile/Tablette */
+@media (max-width: 980px) {
+  .nav-toggle {
+    display: block !important;
+  }
+}
+
+/* Style des barres */
+.nav-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #EDEDEF;
+  border-radius: 2px;
+  
+  /* C'est ICI le secret : Position absolue au lieu de marges */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 0 !important; /* Sécurité pour écraser les anciennes marges */
+  
+  transition: transform 0.25s ease, opacity 0.25s ease, top 0.25s ease, bottom 0.25s ease;
+}
+
+/* === ÉTAT FERMÉ (3 barres parallèles) === */
+.nav-toggle .bar:nth-child(1) { top: 11px; }
+.nav-toggle .bar:nth-child(2) { top: 50%; transform: translate(-50%, -50%); }
+.nav-toggle .bar:nth-child(3) { bottom: 11px; }
+
+/* === ÉTAT OUVERT (Croix parfaite) === */
+/* Barre 1 : Descend au milieu et tourne */
+.nav-toggle[aria-expanded="true"] .bar:nth-child(1) {
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* Barre 2 : Disparaît */
+.nav-toggle[aria-expanded="true"] .bar:nth-child(2) {
+  opacity: 0;
+}
+
+/* Barre 3 : Monte au milieu et tourne */
+.nav-toggle[aria-expanded="true"] .bar:nth-child(3) {
+  top: 50%;
+  bottom: auto; /* On annule l'attachement au bas */
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 
 
